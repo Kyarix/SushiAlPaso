@@ -4,71 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sushi al Paso | Menú Profesional</title>
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0f1115; color: #e5e7eb; scroll-behavior: smooth; }
-        .font-serif { font-family: 'Playfair Display', serif; }
-        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.08); }
-        .sushi-card { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
-        
-        /* Estilo para el botón activo */
-        .category-btn.active { 
-            background-color: #ea580c !important; 
-            color: white !important; 
-            border-color: #ea580c !important; 
-            box-shadow: 0 4px 12px rgba(234, 88, 12, 0.3);
-        }
-        
-        /* Visor de imágenes (Lightbox) Mejorado */
-        #lightbox {
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,0.95);
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            cursor: zoom-out;
-            /* Suavizado de entrada/salida */
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.4s ease, visibility 0.4s ease, backdrop-filter 0.4s ease;
-            backdrop-filter: blur(0px);
-        }
-        
-        #lightbox.active {
-            opacity: 1;
-            visibility: visible;
-            backdrop-filter: blur(10px);
-        }
-
-        #img-ampliada {
-            transform: scale(0.8) translateY(20px);
-            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-            max-height: 85vh;
-        }
-
-        #lightbox.active #img-ampliada {
-            transform: scale(1) translateY(0);
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .animate-fade { animation: fadeIn 0.4s ease forwards; }
-
-        #wsp-modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 100; align-items: center; justify-content: center; padding: 20px; }
-        
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-    </style>
+    
+    <link rel="stylesheet" href="style.css">
 </head>
 <body class="min-h-screen pb-20">
 
-    <!-- VISOR DE IMÁGENES (LIGHTBOX) -->
     <div id="lightbox" onclick="cerrarImagen()">
         <div class="relative max-w-4xl w-full flex flex-col items-center">
             <img id="img-ampliada" src="" alt="Vista previa" class="w-full h-auto rounded-2xl shadow-2xl border border-white/10">
@@ -77,7 +20,6 @@
         </div>
     </div>
 
-    <!-- MODAL DE EMERGENCIA WHATSAPP -->
     <div id="wsp-modal" onclick="this.style.display='none'">
         <div class="glass p-8 rounded-3xl max-w-sm w-full text-center" onclick="event.stopPropagation()">
             <h3 class="text-xl font-bold mb-4">¿No abre WhatsApp?</h3>
@@ -87,7 +29,6 @@
         </div>
     </div>
 
-    <!-- HEADER -->
     <header class="fixed top-0 w-full z-50 glass">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <h1 class="text-xl md:text-2xl font-serif text-orange-500 tracking-wider uppercase">Sushi al Paso</h1>
@@ -97,15 +38,12 @@
         </div>
     </header>
 
-    <!-- TITULAR -->
     <section class="pt-32 pb-8 px-6 text-center">
         <h2 class="text-4xl md:text-5xl font-serif mb-4">Nuestro Menú</h2>
         <p class="text-gray-400 text-sm md:text-base">Toca las imágenes para ver cada detalle.</p>
     </section>
 
-    <!-- BUSCADOR Y FILTROS STICKY -->
     <section class="container mx-auto px-6 sticky top-[68px] z-40 py-4 bg-[#0f1115]/90 backdrop-blur-md">
-        <!-- BUSCADOR -->
         <div class="max-w-md mx-auto mb-6 relative">
             <input 
                 type="text" 
@@ -116,7 +54,6 @@
             <span class="absolute left-4 top-3.5 text-gray-500">🔍</span>
         </div>
 
-        <!-- CATEGORÍAS -->
         <div id="filtros" class="flex flex-nowrap md:flex-wrap justify-start md:justify-center gap-2 overflow-x-auto pb-2 no-scrollbar">
             <button onclick="filtrar('Todos')" class="category-btn active shrink-0 px-6 py-2 rounded-full border border-white/10 text-[11px] font-bold uppercase transition-all">Todos</button>
             <button onclick="filtrar('Combos')" class="category-btn shrink-0 px-6 py-2 rounded-full border border-white/10 text-[11px] font-bold uppercase transition-all">Combos</button>
@@ -127,18 +64,15 @@
         </div>
     </section>
 
-    <!-- GRID DE PRODUCTOS -->
     <main class="container mx-auto px-6 py-8">
         <div id="grid-sushi" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            <!-- Renderizado dinámico -->
-        </div>
+            </div>
         
         <div id="sin-resultados" class="hidden text-center py-20">
             <p class="text-gray-500 italic">No encontramos coincidencias para esa búsqueda.</p>
         </div>
     </main>
 
-    <!-- PIE DE PÁGINA -->
     <footer class="container mx-auto px-6 mt-10 pb-10 border-t border-white/5 pt-10 text-center">
         <div class="flex justify-center gap-6 text-gray-500 text-sm mb-4">
             <span>📍 Rosario, SF</span>
@@ -147,110 +81,6 @@
         <p class="text-[9px] text-gray-700 uppercase tracking-[0.2em]">&copy; 2024 Sushi al Paso - Arte Milenario</p>
     </footer>
 
-    <script>
-        const WSP_NUMBER = "5493413514606";
-
-        const productos = [
-            { id: 1, cat: "Entradas", nombre: "Gyoza de Cerdo", precio: 4500, ingredientes: "Empanaditas japonesas al vapor y selladas (5 unidades).", imagen: "https://images.unsplash.com/photo-1541696432-82c6da8ce7bf?auto=format&fit=crop&q=80&w=800", piezas: "5 Unid." },
-            { id: 2, cat: "Entradas", nombre: "Harumaki", precio: 3800, ingredientes: "Arrolladitos primavera de carne y verdura (3 unidades).", imagen: "https://images.unsplash.com/photo-1606331107386-302381274381?auto=format&fit=crop&q=80&w=800", piezas: "3 Unid." },
-            { id: 3, cat: "Combos", nombre: "Combo Clásico 15", precio: 12500, ingredientes: "Surtido de Rolls fríos y Niguiris de salmón fresco.", imagen: "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&q=80&w=800", piezas: "15 Piezas", popular: true },
-            { id: 4, cat: "Frios", nombre: "Ebi Furai Roll", precio: 8500, ingredientes: "Langostino rebozado, palta y Philadelphia. Envuelto en sésamo.", imagen: "https://images.unsplash.com/photo-1617196034796-73dfa7b1fd56?auto=format&fit=crop&q=80&w=800", piezas: "8 Piezas" },
-            { id: 5, cat: "Frios", nombre: "Kanipink Roll", precio: 7900, ingredientes: "Kanikama, palta y queso. Cubierto de salmón rosado.", imagen: "https://images.unsplash.com/photo-1553621042-f6e147245754?auto=format&fit=crop&q=80&w=800", piezas: "8 Piezas" },
-            { id: 6, cat: "Hot", nombre: "Hot Salmón Panko", precio: 8900, ingredientes: "Roll de salmón y queso, rebozado en panko y frito. Calentito y crujiente.", imagen: "https://images.unsplash.com/photo-1611143669185-af224c5e3252?auto=format&fit=crop&q=80&w=800", piezas: "8 Piezas", popular: true },
-            { id: 7, cat: "Veggie", nombre: "Veggie Zen", precio: 6500, ingredientes: "Pepino, zanahoria, palta y queso. Cubierto de ciboulette.", imagen: "https://images.unsplash.com/photo-1559410545-0bdcd187e0a6?auto=format&fit=crop&q=80&w=800", piezas: "8 Piezas" }
-        ];
-
-        let categoriaActual = "Todos";
-        let busquedaActual = "";
-
-        // FUNCIÓN AMPLIAR IMAGEN (NUEVA LÓGICA SMOOTH)
-        function ampliarImagen(src, nombre) {
-            const lightbox = document.getElementById('lightbox');
-            const img = document.getElementById('img-ampliada');
-            const caption = document.getElementById('lightbox-caption');
-            
-            img.src = src;
-            caption.innerText = nombre;
-            lightbox.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function cerrarImagen() {
-            const lightbox = document.getElementById('lightbox');
-            lightbox.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-
-        // BUSCADOR
-        document.getElementById('buscador').addEventListener('input', (e) => {
-            busquedaActual = e.target.value.toLowerCase();
-            render();
-        });
-
-        // FILTRO DE CATEGORÍAS
-        function filtrar(cat) {
-            categoriaActual = cat;
-            const botones = document.querySelectorAll('.category-btn');
-            botones.forEach(btn => {
-                btn.classList.remove('active');
-                const btnText = btn.innerText.toLowerCase();
-                const catLower = cat.toLowerCase();
-                if (catLower === 'todos' && btnText === 'todos') btn.classList.add('active');
-                if (catLower === 'combos' && btnText === 'combos') btn.classList.add('active');
-                if (catLower === 'entradas' && btnText === 'entradas') btn.classList.add('active');
-                if (catLower === 'hot' && btnText === 'rolls calientes') btn.classList.add('active');
-                if (catLower === 'frios' && btnText === 'rolls fríos') btn.classList.add('active');
-                if (catLower === 'veggie' && btnText === 'veggie') btn.classList.add('active');
-            });
-            render();
-        }
-
-        function abrirWsp(msg) {
-            const url = `https://wa.me/${WSP_NUMBER}?text=${encodeURIComponent(msg)}`;
-            if (!window.open(url, '_blank')) {
-                document.getElementById('wsp-modal').style.display = 'flex';
-            }
-        }
-
-        function render() {
-            const grid = document.getElementById('grid-sushi');
-            const filtrados = productos.filter(p => {
-                const matchCat = (categoriaActual === "Todos" || p.cat === categoriaActual);
-                const matchSearch = (p.nombre.toLowerCase().includes(busquedaActual) || p.ingredientes.toLowerCase().includes(busquedaActual));
-                return matchCat && matchSearch;
-            });
-
-            document.getElementById('sin-resultados').style.display = filtrados.length === 0 ? 'block' : 'none';
-
-            grid.innerHTML = filtrados.map(item => `
-                <div class="sushi-card glass rounded-3xl overflow-hidden flex flex-col h-full animate-fade">
-                    <div class="relative h-52 overflow-hidden cursor-pointer group" onclick="ampliarImagen('${item.imagen}', '${item.nombre}')">
-                        <img src="${item.imagen}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-all"></div>
-                        <div class="absolute top-3 left-3 bg-black/60 backdrop-blur-md text-[9px] text-white px-2 py-1 rounded-md uppercase font-bold tracking-widest border border-white/10">
-                            ${item.piezas}
-                        </div>
-                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                            <span class="bg-black/40 backdrop-blur-md p-3 rounded-full text-white text-xl">🔍</span>
-                        </div>
-                    </div>
-                    
-                    <div class="p-6 flex flex-col flex-grow">
-                        <div class="flex justify-between items-start mb-2">
-                            <h4 class="text-base font-bold text-white leading-tight">${item.nombre}</h4>
-                            <span class="text-orange-500 font-bold text-sm">$${item.precio.toLocaleString('es-AR')}</span>
-                        </div>
-                        <p class="text-gray-400 text-xs leading-relaxed mb-6 flex-grow italic">${item.ingredientes}</p>
-                        <button onclick="abrirWsp('Hola! 👋 Quisiera pedir: ${item.nombre} (${item.piezas})')" 
-                                class="w-full bg-orange-600 hover:bg-orange-700 text-white py-3 rounded-2xl text-[11px] font-bold uppercase tracking-wider transition-all shadow-lg active:scale-95">
-                            Añadir al Pedido
-                        </button>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        window.onload = render;
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
