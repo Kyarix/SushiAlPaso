@@ -2,7 +2,7 @@ const WSP_NUMBER = "5493413514606";
 
 const productos = [
     { id: 1, cat: "Entradas", nombre: "Gyoza de Cerdo", precio: 4500, ingredientes: "Empanaditas japonesas al vapor y selladas (5 unidades).", imagen: "https://images.unsplash.com/photo-1541696432-82c6da8ce7bf?auto=format&fit=crop&q=80&w=800", piezas: "5 Unid." },
-    { id: 2, cat: "Entradas", nombre: "Harumaki", precio: 3800, ingredientes: "Arrolladitos primavera de carne y verdura (3 unidades).", imagen: "https://images.unsplash.com/photo-1606331107386-302381274381?auto=format&fit=crop&q=80&w=800", piezas: "3 Unid." },
+    { id: 2, cat: "Entradas", nombre: "SushiFlor", precio: 3800, ingredientes: "Piezas de sushi en forma de flor (4 unidades).", imagen: "imagenes/SushiFlor.jpg", piezas: "3 Unid." },
     { id: 3, cat: "Combos", nombre: "Combo Clásico 15", precio: 12500, ingredientes: "Surtido de Rolls fríos y Niguiris de salmón fresco.", imagen: "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&q=80&w=800", piezas: "15 Piezas", popular: true },
     { id: 4, cat: "Frios", nombre: "Ebi Furai Roll", precio: 8500, ingredientes: "Langostino rebozado, palta y Philadelphia. Envuelto en sésamo.", imagen: "https://images.unsplash.com/photo-1617196034796-73dfa7b1fd56?auto=format&fit=crop&q=80&w=800", piezas: "8 Piezas" },
     { id: 5, cat: "Frios", nombre: "Kanipink Roll", precio: 7900, ingredientes: "Kanikama, palta y queso. Cubierto de salmón rosado.", imagen: "https://images.unsplash.com/photo-1553621042-f6e147245754?auto=format&fit=crop&q=80&w=800", piezas: "8 Piezas" },
