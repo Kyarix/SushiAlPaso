@@ -101,7 +101,7 @@ function enviarPedido() {
         msg += `• *${item.cantidad}x* ${item.nombre} (${item.piezas})\n`;
         total += item.precio * item.cantidad;
     });
-    msg += `\n💰 *Total:* $${total.toLocaleString('es-AR')}\n\nGracias!`;
+    msg += `\n*Total:* $${total.toLocaleString('es-AR')}\n\nGracias!`;
     abrirWsp(msg);
 }
 
