@@ -95,7 +95,7 @@ function actualizarUI() {
 
 function enviarPedido() {
     if (carrito.length === 0) return;
-    let msg = "🍣 *SUSHI AL PASO - PEDIDO* 🍣\n\n";
+    let msg = "*SUSHI AL PASO - PEDIDO* \n\n";
     let total = 0;
     carrito.forEach(item => {
         msg += `• *${item.cantidad}x* ${item.nombre} (${item.piezas})\n`;
