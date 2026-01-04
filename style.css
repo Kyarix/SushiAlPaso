@@ -15,7 +15,7 @@ body {
 
 .sushi-card { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
 
-/* Botón de categoría activo */
+/* Botón Activo */
 .category-btn.active { 
     background-color: #ea580c !important; 
     color: white !important; 
@@ -23,56 +23,36 @@ body {
     box-shadow: 0 4px 12px rgba(234, 88, 12, 0.3);
 }
 
-/* Lightbox Estilos */
+/* Lightbox */
 #lightbox {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.95);
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    cursor: zoom-out;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.4s ease, visibility 0.4s ease, backdrop-filter 0.4s ease;
-    backdrop-filter: blur(0px);
+    position: fixed; inset: 0; background: rgba(0,0,0,0.95); z-index: 1500;
+    display: flex; align-items: center; justify-content: center; padding: 20px; cursor: zoom-out;
+    opacity: 0; visibility: hidden; transition: all 0.4s ease; backdrop-filter: blur(0px);
 }
+#lightbox.active { opacity: 1; visibility: visible; backdrop-filter: blur(10px); }
+#img-ampliada { transform: scale(0.8) translateY(20px); transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1); max-height: 85vh; }
+#lightbox.active #img-ampliada { transform: scale(1) translateY(0); }
 
-#lightbox.active {
-    opacity: 1;
-    visibility: visible;
-    backdrop-filter: blur(10px);
+/* Carrito Sidebar */
+#cart-sidebar {
+    position: fixed; top: 0; right: -100%; width: 100%; max-width: 400px; height: 100%;
+    background: #0f1115; z-index: 1200; transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: -10px 0 30px rgba(0,0,0,0.5); border-left: 1px solid rgba(255,255,255,0.05);
 }
-
-#img-ampliada {
-    transform: scale(0.8) translateY(20px);
-    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    max-height: 85vh;
+#cart-sidebar.open { right: 0; }
+#cart-overlay {
+    position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 1100;
+    display: none; opacity: 0; transition: opacity 0.4s ease;
 }
+#cart-overlay.show { display: block; opacity: 1; }
 
-#lightbox.active #img-ampliada {
-    transform: scale(1) translateY(0);
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.animate-fade { animation: fadeIn 0.4s ease forwards; }
-
+/* Modal Emergencia */
 #wsp-modal { 
-    display: none; 
-    position: fixed; 
-    inset: 0; 
-    background: rgba(0,0,0,0.9); 
-    z-index: 100; 
-    align-items: center; 
-    justify-content: center; 
-    padding: 20px; 
+    display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 2000;
+    align-items: center; justify-content: center; padding: 20px; 
 }
 
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+.animate-fade { animation: fadeIn 0.4s ease forwards; }
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
