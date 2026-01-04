@@ -53,23 +53,27 @@
     </aside>
 
     <header class="fixed top-0 w-full z-50 glass">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <h1 class="text-xl md:text-2xl font-serif text-orange-500 tracking-wider uppercase cursor-pointer" onclick="window.scrollTo(0,0)">Sushi al Paso</h1>
-            
-            <nav class="hidden md:flex space-x-8 text-sm font-medium uppercase tracking-widest">
-                <a href="#" class="hover:text-orange-500 transition">Inicio</a>
-                <a href="#catalogo" class="hover:text-orange-500 transition">Catálogo</a>
-                <a href="#contacto" class="hover:text-orange-500 transition">Contacto</a>
-            </nav>
+    <div class="container mx-auto px-6 py-4 relative flex justify-between items-center">
+        
+        <h1 class="text-xl md:text-2xl font-serif text-orange-500 tracking-wider uppercase cursor-pointer z-10" onclick="window.scrollTo(0,0)">
+            Sushi al Paso
+        </h1>
+        
+        <nav class="hidden md:flex absolute left-1/2 -translate-x-1/2 space-x-8 text-sm font-medium uppercase tracking-widest">
+            <a href="#" class="hover:text-orange-500 transition">Inicio</a>
+            <a href="#catalogo" class="hover:text-orange-500 transition">Catálogo</a>
+            <a href="#contacto" class="hover:text-orange-500 transition">Contacto</a>
+        </nav>
 
-            <button onclick="toggleCart()" class="relative bg-orange-600/10 hover:bg-orange-600 border border-orange-600/30 p-2.5 rounded-full transition-all group">
-                <span id="cart-count" class="absolute -top-1 -right-1 bg-orange-600 text-white text-[10px] w-5 h-5 rounded-full flex items-center justify-center font-bold">0</span>
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-orange-500 group-hover:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-                </svg>
-            </button>
-        </div>
-    </header>
+        <button onclick="toggleCart()" class="relative z-10 bg-orange-600/10 hover:bg-orange-600 border border-orange-600/30 p-2.5 rounded-full transition-all group">
+            <span id="cart-count" class="absolute -top-1 -right-1 bg-orange-600 text-white text-[10px] w-5 h-5 rounded-full flex items-center justify-center font-bold">0</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-orange-500 group-hover:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+            </svg>
+        </button>
+        
+    </div>
+</header>
 
     <section class="pt-32 pb-12 px-6 text-center">
         <span class="text-orange-500 font-semibold tracking-widest text-sm uppercase">Experiencia Premium</span>
