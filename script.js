@@ -9,7 +9,7 @@ const productos = [
         cat: "Entradas", 
         nombre: "Onigiri Veggie", 
         precio: 6000, 
-        ingredientes: "Empanaditas japonesas al vapor y selladas (2 unidades).", 
+        ingredientes: "Relleno de zanahoria, pepino y queso. Envuelto en sésamo (2 unidades).", 
         imagen: "imagenes/OnigiriVeggie.jpeg", 
         piezas: "2 Unid." 
     },
@@ -18,23 +18,23 @@ const productos = [
         cat: "Entradas", 
         nombre: "Onigiri Atún", 
         precio: 6000, 
-        ingredientes: "Relleno de lomo de Atún con mayonesa y ciboutelle. Envuelto en sésamo. (2 unidades).", 
+        ingredientes: "Relleno de lomo de Atún con mayonesa y ciboutelle. Envuelto en sésamo (2 unidades).", 
         imagen: "imagenes/Onigiri.jfif", 
         piezas: "2 Unid."
     },
     { 
         id: 3, 
         cat: "Combos", 
-        nombre: "Combo Clásico 15", 
-        precio: 12500, 
-        ingredientes: "Surtido de Rolls fríos y Niguiris de salmón fresco.", 
-        imagen: "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&q=80&w=800", 
-        piezas: "15 Piezas"
+        nombre: "Barquito Clásico 40", 
+        precio: 50000, 
+        ingredientes: "Surtido de Rolls fríos. Contiene 8 piezas de Red Pasion, 8 piezas de Ebi Furai, 8 piezas de Karaage Roll, 8 piezas de Tuna Deluxe y 8 piezas de Sweet Kani.", 
+        imagen: "imagenes/Combo1.jpg", 
+        piezas: "40 Piezas"
     },
     { 
         id: 4, 
         cat: "Frios", 
-        nombre: "Evi Furai Roll", 
+        nombre: "Ebi Furai Roll", 
         precio: 11000, 
         ingredientes: "Langostino rebozado, palta y queso. Envuelto en sésamo.", 
         imagen: "imagenes/EviFurai.jfif", 
@@ -52,10 +52,10 @@ const productos = [
     { 
         id: 6, 
         cat: "Hot", 
-        nombre: "Hot Salmón Panko", 
-        precio: 8900, 
-        ingredientes: "Roll de salmón y queso, rebozado en panko y frito.", 
-        imagen: "https://images.unsplash.com/photo-1611143669185-af224c5e3252?auto=format&fit=crop&q=80&w=800", 
+        nombre: "Hot Roll Pasion Deluxe", 
+        precio: 13000, 
+        ingredientes: "Roll de salmón, palta y queso, rebozado en panko y frito.", 
+        imagen: "imagenes/HotRoll.jfif", 
         piezas: "8 Piezas"
     },
     { 
