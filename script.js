@@ -15,10 +15,10 @@ const productos = [
     // --- ROLLS FRIOS ---
     { id: 4, cat: "Frios", nombre: "Ebi Furai Roll", precio: 11000, ingredientes: "Langostino rebozado, palta y queso. Envuelto en sésamo.", imagen: "imagenes/EviFurai.jfif", piezas: "8 Piezas" },
     { id: 5, cat: "Frios", nombre: "Sweet Kani Roll", precio: 10000, ingredientes: "Kanikama, frutilla y queso. Envuelto en sésamo.", imagen: "imagenes/SweetKani.jpeg", piezas: "8 Piezas" },
-    { id: 12, cat: "Frios", nombre: "Red Pasion Roll", precio: 11500, ingredientes: "Salmón, palta y Philadelphia. Envuelto en sésamo y topping rojo.", imagen: "imagenes/RedPasion.jpg", piezas: "8 Piezas" },
-    { id: 13, cat: "Frios", nombre: "Kani Pink Roll", precio: 10500, ingredientes: "Kanikama, palta y queso con un toque rosado especial de la casa.", imagen: "imagenes/KaniPink.jpg", piezas: "8 Piezas" },
-    { id: 14, cat: "Frios", nombre: "Tuna Deluxe Roll", precio: 11200, ingredientes: "Atún premium, palta y queso Philadelphia con verdeo.", imagen: "imagenes/TunaDeluxe.jpg", piezas: "8 Piezas" },
-    { id: 15, cat: "Frios", nombre: "Karaage Roll", precio: 10800, ingredientes: "Pollo frito japonés, palta y queso, con lluvia de ciboulette.", imagen: "imagenes/Karaage.jpg", piezas: "8 Piezas" },
+    { id: 12, cat: "Frios", nombre: "Red Pasion Roll", precio: 11000, ingredientes: "Salmón, palta y queso. Envuelto por fuera con alga nori.", imagen: "imagenes/RedPasion.jfif", piezas: "8 Piezas" },
+    { id: 13, cat: "Frios", nombre: "Kani Pink Roll", precio: 9000, ingredientes: "Kanikama, palta y queso. Envuelto por fuera con alga nori", imagen: "imagenes/Kanikama.jfif", piezas: "8 Piezas" },
+    { id: 14, cat: "Frios", nombre: "Tuna Deluxe Roll", precio: 9000, ingredientes: "Lomo de atún saborizado con mayonesa, palta y queso. Envuelto en sésamo.", imagen: "imagenes/TunaDeluxe.jfif", piezas: "8 Piezas" },
+    { id: 15, cat: "Frios", nombre: "Karaage Roll", precio: 9000, ingredientes: "Pollo rebozado, palta y queso. Envuelto en sésamo.", imagen: "imagenes/Karaage.jfif", piezas: "8 Piezas" },
 
     // --- ROLLS HOT ---
     { id: 6, cat: "Hot", nombre: "Hot Roll Pasion Deluxe", precio: 13000, ingredientes: "Roll de salmón, palta y queso, rebozado en panko y frito.", imagen: "imagenes/HotRoll.jfif", piezas: "8 Piezas", popular: true },
