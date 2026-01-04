@@ -1,24 +1,83 @@
+// --- CONFIGURACIÓN ---
 const WSP_NUMBER = "5493413514606";
 
+// --- BASE DE DATOS DE PRODUCTOS ---
+// Para cambiar una imagen por una tuya, poné: imagen: "fotos/nombre.jpg"
 const productos = [
-    { id: 1, cat: "Entradas", nombre: "Gyoza de Cerdo", precio: 4500, ingredientes: "Empanaditas japonesas al vapor y selladas (5 unidades).", imagen: "https://images.unsplash.com/photo-1541696432-82c6da8ce7bf?auto=format&fit=crop&q=80&w=800", piezas: "5 Unid." },
-    { id: 2, cat: "Entradas", nombre: "SushiFlor", precio: 3800, ingredientes: "Piezas de sushi en forma de flor (4 unidades).", imagen: "imagenes/SushiFlor.jpg", piezas: "3 Unid." },
-    { id: 3, cat: "Combos", nombre: "Combo Clásico 15", precio: 12500, ingredientes: "Surtido de Rolls fríos y Niguiris de salmón fresco.", imagen: "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&q=80&w=800", piezas: "15 Piezas", popular: true },
-    { id: 4, cat: "Frios", nombre: "Ebi Furai Roll", precio: 8500, ingredientes: "Langostino rebozado, palta y Philadelphia. Envuelto en sésamo.", imagen: "https://images.unsplash.com/photo-1617196034796-73dfa7b1fd56?auto=format&fit=crop&q=80&w=800", piezas: "8 Piezas" },
-    { id: 5, cat: "Frios", nombre: "Kanipink Roll", precio: 7900, ingredientes: "Kanikama, palta y queso. Cubierto de salmón rosado.", imagen: "https://images.unsplash.com/photo-1553621042-f6e147245754?auto=format&fit=crop&q=80&w=800", piezas: "8 Piezas" },
-    { id: 6, cat: "Hot", nombre: "Hot Salmón Panko", precio: 8900, ingredientes: "Roll de salmón y queso, rebozado en panko y frito. Calentito y crujiente.", imagen: "https://images.unsplash.com/photo-1611143669185-af224c5e3252?auto=format&fit=crop&q=80&w=800", piezas: "8 Piezas", popular: true },
-    { id: 7, cat: "Veggie", nombre: "Veggie Zen", precio: 6500, ingredientes: "Pepino, zanahoria, palta y queso. Cubierto de ciboulette.", imagen: "https://images.unsplash.com/photo-1559410545-0bdcd187e0a6?auto=format&fit=crop&q=80&w=800", piezas: "8 Piezas" }
+    { 
+        id: 1, 
+        cat: "Entradas", 
+        nombre: "Onigiri Veggie", 
+        precio: 6000, 
+        ingredientes: "Empanaditas japonesas al vapor y selladas (2 unidades).", 
+        imagen: "imagenes/OnigiriVeggie.jpeg", 
+        piezas: "2 Unid." 
+    },
+    { 
+        id: 2, 
+        cat: "Entradas", 
+        nombre: "Onigiri Atún", 
+        precio: 6000, 
+        ingredientes: "Relleno de lomo de Atún con mayonesa y ciboutelle. Envuelto en sésamo. (2 unidades).", 
+        imagen: "imagenes/Onigiri.jfif", 
+        piezas: "2 Unid."
+    },
+    { 
+        id: 3, 
+        cat: "Combos", 
+        nombre: "Combo Clásico 15", 
+        precio: 12500, 
+        ingredientes: "Surtido de Rolls fríos y Niguiris de salmón fresco.", 
+        imagen: "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&q=80&w=800", 
+        piezas: "15 Piezas"
+    },
+    { 
+        id: 4, 
+        cat: "Frios", 
+        nombre: "Evi Furai Roll", 
+        precio: 11000, 
+        ingredientes: "Langostino rebozado, palta y queso. Envuelto en sésamo.", 
+        imagen: "imagenes/EviFurai.jfif", 
+        piezas: "8 Piezas" 
+    },
+    { 
+        id: 5, 
+        cat: "Frios", 
+        nombre: "Sweet Kani Roll", 
+        precio: 10000, 
+        ingredientes: "Kanikama, frutilla y queso. Envuelto en sésamo.", 
+        imagen: "imagenes/SweetKani.jpeg", 
+        piezas: "8 Piezas" 
+    },
+    { 
+        id: 6, 
+        cat: "Hot", 
+        nombre: "Hot Salmón Panko", 
+        precio: 8900, 
+        ingredientes: "Roll de salmón y queso, rebozado en panko y frito.", 
+        imagen: "https://images.unsplash.com/photo-1611143669185-af224c5e3252?auto=format&fit=crop&q=80&w=800", 
+        piezas: "8 Piezas"
+    },
+    { 
+        id: 7, 
+        cat: "Veggie", 
+        nombre: "Veggie Roll", 
+        precio: 8500, 
+        ingredientes: "Pepino, zanahoria y queso. Envuelto en sésamo.", 
+        imagen: "imagenes/SushiVeggie.jpeg", 
+        piezas: "8 Piezas" 
+    }
 ];
 
 let categoriaActual = "Todos";
 let busquedaActual = "";
 
-// FUNCIÓN AMPLIAR IMAGEN
+// --- FUNCIONES ---
+
 function ampliarImagen(src, nombre) {
     const lightbox = document.getElementById('lightbox');
     const img = document.getElementById('img-ampliada');
     const caption = document.getElementById('lightbox-caption');
-    
     img.src = src;
     caption.innerText = nombre;
     lightbox.classList.add('active');
@@ -31,13 +90,11 @@ function cerrarImagen() {
     document.body.style.overflow = 'auto';
 }
 
-// BUSCADOR
 document.getElementById('buscador').addEventListener('input', (e) => {
     busquedaActual = e.target.value.toLowerCase();
     render();
 });
 
-// FILTRO DE CATEGORÍAS
 function filtrar(cat) {
     categoriaActual = cat;
     const botones = document.querySelectorAll('.category-btn');
@@ -46,7 +103,6 @@ function filtrar(cat) {
         const btnText = btn.innerText.toLowerCase();
         const catLower = cat.toLowerCase();
         
-        // Mapeo simple de nombres de botones a categorías internas
         if (catLower === 'todos' && btnText === 'todos') btn.classList.add('active');
         if (catLower === 'combos' && btnText === 'combos') btn.classList.add('active');
         if (catLower === 'entradas' && btnText === 'entradas') btn.classList.add('active');
@@ -82,18 +138,14 @@ function render() {
                 <div class="absolute top-3 left-3 bg-black/60 backdrop-blur-md text-[9px] text-white px-2 py-1 rounded-md uppercase font-bold tracking-widest border border-white/10">
                     ${item.piezas}
                 </div>
-                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                    <span class="bg-black/40 backdrop-blur-md p-3 rounded-full text-white text-xl">🔍</span>
-                </div>
             </div>
-            
             <div class="p-6 flex flex-col flex-grow">
                 <div class="flex justify-between items-start mb-2">
                     <h4 class="text-base font-bold text-white leading-tight">${item.nombre}</h4>
                     <span class="text-orange-500 font-bold text-sm">$${item.precio.toLocaleString('es-AR')}</span>
                 </div>
                 <p class="text-gray-400 text-xs leading-relaxed mb-6 flex-grow italic">${item.ingredientes}</p>
-                <button onclick="abrirWsp('Hola! 👋 Quisiera pedir: ${item.nombre} (${item.piezas})')" 
+                <button onclick="abrirWsp('Hola! Quisiera pedir: ${item.nombre} (${item.piezas})')" 
                         class="w-full bg-orange-600 hover:bg-orange-700 text-white py-3 rounded-2xl text-[11px] font-bold uppercase tracking-wider transition-all shadow-lg active:scale-95">
                     Añadir al Pedido
                 </button>
