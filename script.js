@@ -16,7 +16,7 @@ const productos = [
 
     // COMBOS
       { id: 3, cat: "Combos", nombre: "Barquito Premium 40", precio: 52000, ingredientes: "Surtido de Rolls fríos. Contiene 8 Red Pasion, 8 Ebi Furai, 8 Karaage Roll, 8 Tuna Deluxe y 8 Sweet Kani. Incluye 4 juegos de palillos y 4 salsas de soja y 2 de maracuyá.", imagen: "imagenes/Combo1.jpg", piezas: "40 Piezas", popular: true },
-    { id: 18, cat: "Combos", nombre: "Barquito Clásico 16", precio: 25000, ingredientes: "Surtido de Rolls fríos. Contiene 4 Red Pasion, 4 Ebi Furai, 4 Karaage Roll y 4 Tuna Deluxe. Incluye 2 juegos de palillos, 2 salsas de soja y 1 salsa de maracuyá.", imagen: "imagenes/Combo16Piezas.jpg", piezas: "16 Piezas" },
+    { id: 18, cat: "Combos", nombre: "Barquito Clásico 16", precio: 25000, ingredientes: "Surtido de Rolls fríos. Contiene 8 Red Pasion y 8 Ebi Furai. Incluye 2 juegos de palillos, 2 salsas de soja y 1 salsa de maracuyá.", imagen: "imagenes/Combo16Piezas.jpg", piezas: "16 Piezas" },
     { id: 19, cat: "Combos", nombre: "Barquito Deluxe 16", precio: 25000, ingredientes: "Full Salmón rosado, palta y queso. Incluye 2 juegos de palillos, 2 salsas de soja y 1 salsa de maracuyá.", imagen: "imagenes/ComboSalmon.jfif", piezas: "16 Piezas", popular: true },
 
     // ROLLS FRIOS
