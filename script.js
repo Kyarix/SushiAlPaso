@@ -121,7 +121,7 @@ function enviarPedido() {
         totalFinal += sub;
     });
     
-    msg += `\n * ALIAS Mercado Pago: adri.camping \n\nTOTAL:* $${totalFinal.toLocaleString('es-AR')}\n\nGracias!`;
+    msg += `\n  ALIAS Mercado Pago: adri.camping / Adriana Mulero \n\n*TOTAL:* $${totalFinal.toLocaleString('es-AR')}\n\nGracias!`;
     
     abrirWsp(msg);
 }
