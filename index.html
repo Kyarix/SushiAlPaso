@@ -7,7 +7,6 @@
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="min-h-screen pb-20">
@@ -24,27 +23,18 @@
         <div class="glass p-8 rounded-3xl max-w-sm w-full text-center" onclick="event.stopPropagation()">
             <h3 class="text-xl font-bold mb-4 text-white">¿No abre WhatsApp?</h3>
             <p class="text-gray-400 mb-6 text-sm">Contáctanos directamente agendando este número:</p>
-            <div class="bg-black/40 p-4 rounded-xl font-mono text-orange-500 text-lg mb-6 tracking-wider">
-                +54 9 341 3514606
-            </div>
-            <button onclick="document.getElementById('wsp-modal').style.display='none'" class="w-full bg-orange-600 text-white py-3 rounded-xl font-bold shadow-lg shadow-orange-900/30">
-                Entendido
-            </button>
+            <div class="bg-black/40 p-4 rounded-xl font-mono text-orange-500 text-lg mb-6 tracking-wider">+54 9 341 3514606</div>
+            <button onclick="document.getElementById('wsp-modal').style.display='none'" class="w-full bg-orange-600 text-white py-3 rounded-xl font-bold shadow-lg shadow-orange-900/30">Entendido</button>
         </div>
     </div>
 
     <div id="cart-overlay" onclick="toggleCart()"></div>
-
     <aside id="cart-sidebar" class="flex flex-col">
         <div class="p-6 border-b border-white/5 flex justify-between items-center bg-black/20">
             <h3 class="text-xl font-bold text-orange-500 font-serif uppercase tracking-widest">Tu Carrito</h3>
             <button onclick="toggleCart()" class="text-gray-400 hover:text-white text-2xl">&times;</button>
         </div>
-        
-        <div id="cart-items" class="flex-grow overflow-y-auto p-6 space-y-4 no-scrollbar text-sm">
-            <p class="text-gray-500 text-center italic mt-10">Tu carrito está vacío...</p>
-        </div>
-
+        <div id="cart-items" class="flex-grow overflow-y-auto p-6 space-y-4 no-scrollbar text-sm"></div>
         <div class="p-6 border-t border-white/5 bg-black/20">
             <div class="flex justify-between items-center mb-6">
                 <span class="text-gray-400 uppercase text-xs tracking-widest font-bold">Total estimado</span>
@@ -58,24 +48,20 @@
 
     <header class="fixed top-0 w-full z-50 glass">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center relative">
-            
-            <h1 class="text-xl md:text-2xl font-serif text-orange-500 tracking-wider uppercase cursor-pointer z-10" onclick="window.scrollTo(0,0)">
+            <h1 class="text-xl md:text-2xl font-serif text-orange-500 tracking-wider uppercase cursor-pointer" onclick="window.scrollTo(0,0)">
                 Sushi al Paso
             </h1>
-            
-            <nav class="hidden md:flex absolute left-1/2 -translate-x-1/2 space-x-8 text-sm font-medium uppercase tracking-widest">
+            <nav class="hidden md:flex absolute left-1/2 -translate-x-1/2 space-x-8 text-sm font-medium uppercase tracking-widest text-gray-400">
                 <a href="#" class="hover:text-orange-500 transition">Inicio</a>
-                <a href="#catalogo" class="hover:text-orange-500 transition">Catálogo</a>
+                <a href="#catalogo" class="hover:text-orange-500 transition text-orange-500 font-bold">Catálogo</a>
                 <a href="#contacto" class="hover:text-orange-500 transition">Contacto</a>
             </nav>
-
             <button onclick="toggleCart()" class="relative z-10 bg-orange-600/10 hover:bg-orange-600 border border-orange-600/30 p-2.5 rounded-full transition-all group">
                 <span id="cart-count" class="absolute -top-1 -right-1 bg-orange-600 text-white text-[10px] w-5 h-5 rounded-full flex items-center justify-center font-bold">0</span>
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-orange-500 group-hover:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                 </svg>
             </button>
-            
         </div>
     </header>
 
@@ -87,12 +73,7 @@
 
     <section id="catalogo" class="container mx-auto px-6 sticky top-[68px] z-40 py-4 bg-[#0f1115]/90 backdrop-blur-md">
         <div class="max-w-md mx-auto mb-6 relative">
-            <input 
-                type="text" 
-                id="buscador" 
-                placeholder="Buscar ingrediente o nombre..." 
-                class="w-full bg-white/5 border border-white/10 rounded-2xl py-3 px-12 focus:outline-none focus:ring-2 focus:ring-orange-500/50 transition-all text-sm"
-            >
+            <input type="text" id="buscador" placeholder="Buscar ingrediente o nombre..." class="w-full bg-white/5 border border-white/10 rounded-2xl py-3 px-12 focus:outline-none focus:ring-2 focus:ring-orange-500/50 transition-all text-sm">
             <span class="absolute left-4 top-3.5 text-gray-500">🔍</span>
         </div>
 
@@ -102,7 +83,7 @@
             <button onclick="filtrar('Entradas')" class="category-btn shrink-0 px-6 py-2 rounded-full border border-white/10 text-[11px] font-bold uppercase transition-all">Entradas</button>
             <button onclick="filtrar('Hot')" class="category-btn shrink-0 px-6 py-2 rounded-full border border-white/10 text-[11px] font-bold uppercase transition-all">Rolls Calientes</button>
             <button onclick="filtrar('Frios')" class="category-btn shrink-0 px-6 py-2 rounded-full border border-white/10 text-[11px] font-bold uppercase transition-all">Rolls Fríos</button>
-            <button onclick="filtrar('Veggie')" class="category-btn shrink-0 px-6 py-2 rounded-full border border-white/10 text-[11px] font-bold uppercase transition-all">Veggie</button>
+            <button onclick="filtrar('Veggie')" class="category-btn shrink-0 px-6 py-2 rounded-full border border-white/10 text-[11px] font-bold uppercase transition-all">Veggie</button><button onclick="filtrar('Especiales')" class="category-btn shrink-0 px-6 py-2 rounded-full border border-white/10 text-[11px] font-bold uppercase transition-all">Rolls Especiales</button>
         </div>
     </section>
 
@@ -115,22 +96,11 @@
         <div class="container mx-auto px-6 text-center">
             <h4 class="text-3xl font-serif mb-8 text-white">¿Hacemos un pedido?</h4>
             <div class="flex flex-col md:flex-row justify-center items-center gap-8 mb-12 text-gray-400 text-sm">
-                <div class="flex items-center gap-3">
-                    <span class="text-orange-500 text-xl">📍</span>
-                    <span>Pueblo Esther, Avenida J.B Alberdi 1057</span>
-                </div>
-                <button onclick="abrirWsp('Hola! Los contacto desde la web.')" class="flex items-center gap-3 hover:text-orange-500 transition">
-                    <span class="text-orange-500 text-xl">📞</span>
-                    <span>+54 9 341 3514606</span>
-                </button>
-                <div class="flex items-center gap-3">
-                    <span class="text-orange-500 text-xl">⏰</span>
-                    <span>Lunes - Dom: 9:00 a 19:00</span>
-                </div>
+                <span>📍 Pueblo Esther, Av. Alberdi 1057</span>
+                <span>📞 +54 9 341 3514606</span>
+                <span>⏰ Lun - Dom: 9:00 a 19:00</span>
             </div>
-            <div class="border-t border-gray-800 pt-8 text-[10px] text-gray-600 uppercase tracking-widest">
-                &copy; 2026 Sushi al Paso. Arte y Frescura.
-            </div>
+            <p class="text-[10px] text-gray-600 uppercase tracking-widest">&copy; 2026 Sushi al Paso. Arte y Frescura.</p>
         </div>
     </footer>
 
